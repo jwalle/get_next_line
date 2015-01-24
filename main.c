@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 14:38:36 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:59:34 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include "get_next_line.h"
 
+//plop
 
 int		test_files(char *file_name)
 {	
