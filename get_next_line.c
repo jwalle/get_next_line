@@ -42,8 +42,8 @@ int		get_next_line(int const fd, char **line)
 {
 	static t_static toto;
 
-	*line = ft_strnew(BUFF_SIZE + 10);
-	ft_strclr(*line);
+	//*line = ft_strnew(BUFF_SIZE + 10);
+	//ft_strclr(*line);
 	if (!line || BUFF_SIZE < 1)
 		return (-1);
 	if (!toto.size)

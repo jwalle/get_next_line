@@ -94,8 +94,8 @@ int		main(int ac, char **av)
 			if (err > 0)
 			{
 				printf("#%d# : \033[33m%s\033[0m\n", err, line);
-				/*if(line)
-					free((void*)line);*/
+				if(line)
+					free((void*)line);
 			}
 			else
 			{
