@@ -25,7 +25,7 @@ int		test_files(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
-		printf("open() error");
+		printf("open() error file : %s", file_name);
 		return (1);
 	}
 	return (fd);
@@ -39,7 +39,7 @@ int		main(int ac, char **av)
 	char *line;
 	int	i;
 	int err;
-	char *files[] = {"./cor/1_8", "./cor/2_8", "./cor/5_8","./cor/1_16","./cor/2_16","./cor/5_16", "./cor/1_long", "./cor/sansn", "./cor/multi1","./core/multi2","./cor/multi3"};
+	char *files[] = {"./cor/1_8", "./cor/2_8", "./cor/5_8","./cor/1_16","./cor/2_16","./cor/5_16", "./cor/1_long", "./cor/sansn", "./cor/multi1","./cor/multi2","./cor/multi3"};
 
 	av[1] = av[1];
 	i = 0;
