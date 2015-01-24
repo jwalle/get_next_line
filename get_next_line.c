@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 14:33:46 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:58:32 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_set_zero(t_static *toto)
 	toto->cpy = 0;
 	toto->size = 0;
 }
+
+// plop
 
 int		ft_cpy(t_static *toto, char **line)
 {
