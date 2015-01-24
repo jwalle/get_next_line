@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 14:58:32 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:33:46 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_set_zero(t_static *toto)
 	toto->cpy = 0;
 	toto->size = 0;
 }
-
-// plop
 
 int		ft_cpy(t_static *toto, char **line)
 {
@@ -50,7 +48,7 @@ int		get_next_line(int const fd, char **line)
 		return (-1);
 	if (!toto.size)
 	{
-		//toto.buf = ft_strnew(0);
+		toto.buf = ft_strnew(0);
 		toto.tmp = ft_strnew(BUFF_SIZE + 10);
 		while ((toto.i = read(fd, toto.tmp, BUFF_SIZE + 10)) > 0)
 		{
@@ -58,7 +56,7 @@ int		get_next_line(int const fd, char **line)
 			if (toto.size == 0)
 				toto.buf = ft_strdup(toto.tmp);
 			else
-				toto.buf = ft_strcat(toto.buf, toto.tmp);
+				toto.buf = ft_strjoin(toto.buf, toto.tmp);
 			toto.size += toto.i;
 		}
 		toto.str = ft_strnew(toto.size);

@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 14:59:34 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:38:36 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <stdio.h>
 #include "get_next_line.h"
 
-//plop
 
 int		test_files(char *file_name)
 {	
@@ -95,8 +94,8 @@ int		main(int ac, char **av)
 			if (err > 0)
 			{
 				printf("#%d# : \033[33m%s\033[0m\n", err, line);
-				if(line)
-					free((void*)line);
+				/*if(line)
+					free((void*)line);*/
 			}
 			else
 			{
