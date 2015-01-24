@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2014/12/08 03:24:14 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:33:46 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int		get_next_line(int const fd, char **line)
 {
 	static t_static toto;
 
-	(*line) = ft_strnew(BUFF_SIZE + 10);
+	*line = ft_strnew(BUFF_SIZE + 10);
 	ft_strclr(*line);
 	if (!line || BUFF_SIZE < 1)
 		return (-1);
 	if (!toto.size)
 	{
-		toto.buf = ft_strnew(0);
+		//toto.buf = ft_strnew(0);
 		toto.tmp = ft_strnew(BUFF_SIZE + 10);
 		while ((toto.i = read(fd, toto.tmp, BUFF_SIZE + 10)) > 0)
 		{

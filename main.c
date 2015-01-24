@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 10:07:20 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/01/24 14:38:36 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ int		main(int ac, char **av)
 			}
 			else
 			{
-				printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[31m\n", err, i + 1);
+				printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[0m\n", err, i + 1);
 				i++;
 				err = -1;
 			}
 		}
 	}
-	printf("0 argument pour test sur fichier, 1 argument pour entree standard, 2 arguments pour multi-fd.\n");
+	printf("\x1B[32m0 argument pour test sur fichier, 1 argument pour entree standard, 2 arguments pour multi-fd.\x1B[0m\n");
 	if (close(fd) == -1)
 	{
 		printf("close() error");
