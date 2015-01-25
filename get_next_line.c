@@ -11,12 +11,23 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 void	ft_set_zero(t_static *toto)
 {
 	toto->cpy = 0;
 	toto->size = 0;
+	if (toto->tmp)
+		free(toto->tmp);
+	if (toto->buf)
+		free(toto->buf);
+//	if (toto->str)
+//		free(toto->str);
+	//if (toto)
+	//	free(toto);
 }
+
+
 
 int		ft_cpy(t_static *toto, char **line)
 {
@@ -26,8 +37,6 @@ int		ft_cpy(t_static *toto, char **line)
 	if (toto->cpy >= toto->size)
 	{
 		ft_set_zero(toto);
-		ft_strclr(toto->buf);
-		toto->str = NULL;
 		return (0);
 	}
 	while (toto->str[k] != '\0' && toto->str[k] != '\n')
@@ -42,15 +51,12 @@ int		get_next_line(int const fd, char **line)
 {
 	static t_static toto;
 
-	//*line = ft_strnew(BUFF_SIZE + 10);
-	//ft_strclr(*line);
 	if (!line || BUFF_SIZE < 1)
 		return (-1);
 	if (!toto.size)
 	{
-		toto.buf = ft_strnew(0);
-		toto.tmp = ft_strnew(BUFF_SIZE + 10);
-		while ((toto.i = read(fd, toto.tmp, BUFF_SIZE + 10)) > 0)
+		toto.tmp = ft_strnew(BUFF_SIZE);
+		while ((toto.i = read(fd, toto.tmp, BUFF_SIZE)) > 0)
 		{
 			toto.tmp[toto.i] = '\0';
 			if (toto.size == 0)
@@ -58,9 +64,10 @@ int		get_next_line(int const fd, char **line)
 			else
 				toto.buf = ft_strjoin(toto.buf, toto.tmp);
 			toto.size += toto.i;
+			toto.tmp = ft_strnew(BUFF_SIZE);
 		}
 		toto.str = ft_strnew(toto.size);
-		toto.str = ft_strdup(toto.buf);
+		ft_strcpy(toto.str, toto.buf);
 	}
 	if (toto.i < 0)
 		return (-1);

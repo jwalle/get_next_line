@@ -74,7 +74,7 @@ int		main(int ac, char **av)
 	{
 		while (err)
 		{
-			err = get_next_line(-42, &line);
+			err = get_next_line(0, &line);
 			if (err > 0)
 				printf("#%d# : \033[33m%s\033[0m\n", err, line);
 		}
