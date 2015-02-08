@@ -12,7 +12,7 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 1000000
+# define BUFF_SIZE 8
 
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -24,8 +24,7 @@
 typedef struct	s_static
 {
 	char		*buf;
-	char		*str;
-	char		tmp[BUFF_SIZE];
+	char		tmp[BUFF_SIZE + 1];
 	int			i;
 	int			size;
 	int			cpy;
