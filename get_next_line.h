@@ -6,13 +6,13 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 18:06:37 by jwalle            #+#    #+#             */
-/*   Updated: 2015/01/24 14:31:53 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/02/09 18:53:27 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
+# define BUFF_SIZE 10000000
 
 # include <sys/types.h>
 # include <sys/stat.h>
