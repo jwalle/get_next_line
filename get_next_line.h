@@ -6,16 +6,14 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 18:06:37 by jwalle            #+#    #+#             */
-/*   Updated: 2015/02/09 18:53:27 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/09 18:01:59 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
+# define BUFF_SIZE 1643446566
 
-# include <sys/types.h>
-# include <sys/stat.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -24,7 +22,6 @@
 typedef struct	s_static
 {
 	char		*buf;
-	char		tmp[BUFF_SIZE + 1];
 	int			i;
 	int			size;
 	int			cpy;

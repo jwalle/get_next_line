@@ -6,12 +6,11 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2015/02/09 14:10:35 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/09 17:59:34 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 void	ft_set_zero(t_static *toto)
 {
@@ -45,18 +44,20 @@ int		ft_cpy(t_static *toto, char **line)
 int		get_next_line(int const fd, char **line)
 {
 	static t_static toto;
+	char			*tmp;
 
+	tmp = malloc(BUFF_SIZE + 1);
 	if (!line || BUFF_SIZE < 1)
 		return (-1);
 	if (!toto.size)
 	{
-		while ((toto.i = read(fd, toto.tmp, BUFF_SIZE)) > 0)
+		while ((toto.i = read(fd, tmp, BUFF_SIZE)) > 0)
 		{
-			toto.tmp[toto.i] = '\0';
+			tmp[toto.i] = 0;
 			if (!toto.size)
-				toto.buf = ft_strdup(toto.tmp);
+				toto.buf = ft_strdup(tmp);
 			else
-				toto.buf = ft_strjoin(toto.buf, toto.tmp);
+				toto.buf = ft_strjoin(toto.buf, tmp);
 			toto.size += toto.i;
 		}
 	}

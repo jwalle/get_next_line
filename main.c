@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/09 12:00:34 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/09 16:45:01 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_simple(char *line, char *files[])
 	{
 		fd = test_files(files[i]);
 		err = 1;
-		while (err > 0)
+		while ((err > 0))
 		{
 			err = get_next_line(fd, &line);
 			if (err > 0)
