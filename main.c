@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/09 11:59:30 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/09 12:00:34 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	ft_input(char *line)
 		if (err > 0)
 			printf("#%d# : \033[33m%s\033[0m\n", err, line);
 	}
-	printf("#%d# : \033[33m%s\033[0m\n", err, line);
 	printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[0m\n", err, i + 1);
 	free((void *)line);	
 }
