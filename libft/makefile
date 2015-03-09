@@ -131,7 +131,7 @@ $(SOURCE) : ./src/
 all : $(NAME)
 
 $(NAME) :
-	gcc -c -Wall -Wextra -Werror $(SRC1) -I ./includes/
+	gcc -c -Wall -std=gnu99 -Wextra -Werror $(SRC1) -I ./includes/
 	ar rc $(NAME) $(SRC2)
 	ranlib $(NAME)
 
