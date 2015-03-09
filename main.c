@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/09 11:27:51 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/09 11:59:30 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,43 +110,12 @@ int		main(int ac, char **av)
 	char *files[] = {"./cor/1_8", "./cor/2_8", "./cor/5_8","./cor/1_16",
 					"./cor/2_16","./cor/5_16", "./cor/1_long", "./cor/sansn",
 					"./cor/multi1","./cor/multi2","./cor/multi3"};
+	
 	line = malloc(sizeof(char)*10000);
 	if (ac == 1)
 		ft_simple(line, files);
 	if (ac == 2)
 	{
-		while (err)
-		{
-			err = get_next_line(0, &line);
-			if (err > 0)
-				printf("#%d# : \033[33m%s\033[0m\n", err, line);
-		}
-		//printf("#%d# : \033[33m%s\033[0m\n", err, line);
-		printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[31m\n", err, i + 1);
-		free((void *)line);	
-	return (0);
-	}
-
-	while (i < 8)
-	{
-		fd = test_files(files[i]);
-		err = 1;
-		while (err > 0)
-		{
-			err = get_next_line(fd, &line);
-			if (err > 0)
-			{
-				printf("#%d# : \033[33m%s\033[0m\n", err, line);
-				if(line)
-					free((void*)line);
-			}
-			else
-			{
-				printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[0m\n", err, i + 1);
-				i++;
-				err = -1;
-			}
-		}
 		if (!strcmp(av[1], "1"))
 			ft_input(line);
 		if (!strcmp(av[1], "2"))
