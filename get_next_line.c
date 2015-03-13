@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/09 17:59:34 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/13 17:28:40 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int		get_next_line(int const fd, char **line)
 	{
 		while ((toto.i = read(fd, tmp, BUFF_SIZE)) > 0)
 		{
+			if (toto.i < 0)
+				return (-1);
 			tmp[toto.i] = 0;
 			if (!toto.size)
 				toto.buf = ft_strdup(tmp);
@@ -60,8 +62,8 @@ int		get_next_line(int const fd, char **line)
 				toto.buf = ft_strjoin(toto.buf, tmp);
 			toto.size += toto.i;
 		}
+		if (toto.i < 0)
+			return (-1);
 	}
-	if (toto.i < 0)
-		return (-1);
 	return (ft_cpy(&toto, line));
 }

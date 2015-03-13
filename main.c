@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/09 16:45:01 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/03/13 18:39:22 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,41 @@ void	ft_simple(char *line, char *files[])
 			}
 		}
 	}
+	err = get_next_line(2342, &line);
+	printf("\x1B[31m#%d# : Faux fichier\x1B[0m\n", err);
+	
+}
+
+void	ft_stand(char *line)
+{
+	int err;
+	int fd = 1;
+	int out;
+	int p[2];
+
+/*	out = dup(fd);
+	pipe(p);
+	dup2(p[1], fd);
+	write (fd, "plop", 4);
+	dup2(out, fd);
+	close(p[1]);
+	err = get_next_line(p[0], &line);
+	printf("#%d# : \033[33m%s\033[0m\n", err, line);*/
+	
+	fd = 2;	
+	out = dup(fd);
+	pipe(p);
+	dup2(p[1], fd);
+	write (fd, "test\naaaa\ndsds", 14);
+	dup2(out, fd);
+	close(p[1]);
+	err = get_next_line(p[0], &line);
+	printf("#%d# : \033[33m%s\033[0m\n", err, line);
+	err = get_next_line(p[0], &line);
+	printf("#%d# : \033[33m%s\033[0m\n", err, line);
+	err = get_next_line(p[0], &line);
+	printf("#%d# : \033[33m%s\033[0m\n", err, line);
+
 }
 
 void	ft_input(char *line)
@@ -65,7 +100,7 @@ void	ft_input(char *line)
 	int err = 1;
 	int i = 0;
 
-	while (err)
+	while (err > 0)
 	{
 		err = get_next_line(0, &line);
 		if (err > 0)
@@ -119,6 +154,8 @@ int		main(int ac, char **av)
 			ft_input(line);
 		if (!strcmp(av[1], "2"))
 			multi_fd(line, files);
+		if (!strcmp(av[1], "3"))
+			ft_stand(line);
 	}
 	printf("\x1B[32m0 argument pour test sur fichier, 1 argument pour entree standard, 2 arguments pour multi-fd.\x1B[0m\n");
 	return (0);
