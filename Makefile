@@ -9,6 +9,7 @@ all : $(NAME)
 $(NAME) :
 	gcc -c -g -Wall -Werror -Wextra -I libft/includes/ $(SRC) main.c
 	gcc -o $(NAME) $(OBJ) main.o -L libft/ -lft
+	/bin/rm -f *.o 
 
 clean:
 	/bin/rm -f $(OBJ) 
