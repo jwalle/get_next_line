@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/22 16:58:15 by jwalle            #+#    #+#             */
-/*   Updated: 2015/03/13 18:39:22 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/05/07 18:24:30 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	ft_simple(char *line, char *files[])
 	}
 	err = get_next_line(2342, &line);
 	printf("\x1B[31m#%d# : Faux fichier\x1B[0m\n", err);
-	
 }
 
 void	ft_stand(char *line)
@@ -107,7 +106,7 @@ void	ft_input(char *line)
 			printf("#%d# : \033[33m%s\033[0m\n", err, line);
 	}
 	printf("\x1B[31m#%d# : Fin du fichier %d. \x1B[0m\n", err, i + 1);
-	free((void *)line);	
+	//free((void *)line);	
 }
 
 void multi_fd(char *line, char *files[])
