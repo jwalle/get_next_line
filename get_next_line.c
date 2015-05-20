@@ -6,7 +6,7 @@
 /*   By: jwalle <jwalle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 17:44:58 by jwalle            #+#    #+#             */
-/*   Updated: 2015/05/12 19:45:57 by jwalle           ###   ########.fr       */
+/*   Updated: 2015/05/20 16:04:12 by jwalle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strndup(const char *s1, int k)
 {
-	int	i;
+	int		i;
 	char	*dest;
 	size_t	len;
 
@@ -33,7 +33,7 @@ char	*ft_strndup(const char *s1, int k)
 	return (dest);
 }
 
-int	ft_set_zero(t_static *toto)
+int		ft_set_zero(t_static *toto)
 {
 	if (toto->cpy >= toto->size)
 	{
@@ -45,9 +45,9 @@ int	ft_set_zero(t_static *toto)
 	return (1);
 }
 
-int	ft_cpy(t_static *toto, char **line)
+int		ft_cpy(t_static *toto, char **line)
 {
-	int	k;
+	int		k;
 	char	*temp;
 
 	k = 0;
@@ -64,9 +64,9 @@ int	ft_cpy(t_static *toto, char **line)
 	return (1);
 }
 
-int	get_next_line(int const fd, char **line)
+int		get_next_line(int const fd, char **line)
 {
-	static t_static 	toto;
+	static t_static toto;
 	char			*tmp;
 
 	if (BUFF_SIZE < 1 || fd < 0 || !line)
